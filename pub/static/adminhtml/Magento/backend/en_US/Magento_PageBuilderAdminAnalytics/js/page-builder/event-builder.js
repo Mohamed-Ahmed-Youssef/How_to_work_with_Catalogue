@@ -1,0 +1,1 @@
+/media/mohamedyoussef/data/scandiweb/how_to_work_with_catalogue/vendor/magento/module-page-builder-admin-analytics/view/adminhtml/web/js/page-builder/event-builder.js

@@ -1,0 +1,1 @@
+/media/mohamedyoussef/data/scandiweb/how_to_work_with_catalogue/vendor/magento/module-admin-analytics/view/adminhtml/web/js/release-notification/modal/component-mixin.js
