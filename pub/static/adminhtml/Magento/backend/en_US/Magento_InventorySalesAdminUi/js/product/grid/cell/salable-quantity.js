@@ -1,1 +1,0 @@
-/media/mohamedyoussef/data/scandiweb/how_to_work_with_catalogue/vendor/magento/module-inventory-sales-admin-ui/view/adminhtml/web/js/product/grid/cell/salable-quantity.js

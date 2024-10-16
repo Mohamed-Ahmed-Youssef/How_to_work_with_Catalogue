@@ -1,1 +1,0 @@
-/media/mohamedyoussef/data/scandiweb/how_to_work_with_catalogue/vendor/magento/module-translation/view/base/web/js/mage-translation-dictionary.js
