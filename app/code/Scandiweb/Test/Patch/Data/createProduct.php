@@ -23,34 +23,42 @@ class CreateProduct implements DataPatchInterface
      * @var ProductInterfaceFactory
      */
     protected ProductInterfaceFactory $productInterfaceFactory;
+
     /**
      * @var ProductRepositoryInterface
      */
     protected ProductRepositoryInterface $productRepository;
+
     /**
      * @var State
      */
     protected State $appState;
+
     /**
      * @var StoreManagerInterface
      */
     protected StoreManagerInterface $storeManager;
+
     /**
      * @var SourceItemInterfaceFactory
      */
     protected SourceItemInterfaceFactory $sourceItemFactory;
+
     /**
      * @var SourceItemsSaveInterface
      */
     protected SourceItemsSaveInterface $sourceItemsSaveInterface;
+
     /**
      * @var EavSetup
      */
     protected EavSetup $eavSetup;
+
     /**
      * @var CategoryLinkManagementInterface
      */
     protected CategoryLinkManagementInterface $categoryLink;
+
     /**
      * @var array
      */
@@ -120,7 +128,6 @@ class CreateProduct implements DataPatchInterface
             return;
         }
 
-
         $attributeSetId = $this->eavSetup->getAttributeSetId(Product::ENTITY, 'Default');
         $websiteIDs = [$this->storeManager->getStore()->getWebsiteId()];
         $product->setTypeId(Type::TYPE_SIMPLE)
@@ -132,8 +139,8 @@ class CreateProduct implements DataPatchInterface
             ->setPrice(9.99)
             ->setVisibility(Visibility::VISIBILITY_BOTH)
             ->setStatus(Status::STATUS_ENABLED);
-        $product = $this->productRepository->save($product);
 
+        $product = $this->productRepository->save($product);
         $sourceItem = $this->sourceItemFactory->create();
         $sourceItem->setSourceCode('default');
         $sourceItem->setQuantity(10);
