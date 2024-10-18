@@ -1,4 +1,5 @@
 <?php
+
 namespace Example\Migration\Setup\Patch\Data;
 
 use Magento\Catalog\Api\CategoryLinkManagementInterface;
@@ -18,26 +19,71 @@ use Magento\Store\Model\StoreManagerInterface;
 
 class CreateProduct implements DataPatchInterface
 {
+    /**
+     * @var ProductInterfaceFactory
+     */
     protected ProductInterfaceFactory $productInterfaceFactory;
+
+    /**
+     * @var ProductRepositoryInterface
+     */
     protected ProductRepositoryInterface $productRepository;
+
+    /**
+     * @var State
+     */
     protected State $appState;
+
+    /**
+     * @var StoreManagerInterface
+     */
     protected StoreManagerInterface $storeManager;
+
+    /**
+     * @var SourceItemInterfaceFactory
+     */
     protected SourceItemInterfaceFactory $sourceItemFactory;
+
+    /**
+     * @var SourceItemsSaveInterface
+     */
     protected SourceItemsSaveInterface $sourceItemsSaveInterface;
+
+    /**
+     * @var EavSetup
+     */
     protected EavSetup $eavSetup;
+
+    /**
+     * @var CategoryLinkManagementInterface
+     */
     protected CategoryLinkManagementInterface $categoryLink;
+
+    /**
+     * @var array
+     */
     protected array $sourceItems = [];
+
+    /**
+     * @param ProductInterfaceFactory $productInterfaceFactory
+     * @param ProductRepositoryInterface $productRepository
+     * @param State $appState
+     * @param StoreManagerInterface $storeManager
+     * @param EavSetup $eavSetup
+     * @param SourceItemInterfaceFactory $sourceItemFactory
+     * @param SourceItemsSaveInterface $sourceItemsSaveInterface
+     * @param CategoryLinkManagementInterface $categoryLink
+     */
     public function __construct(
-        ProductInterfaceFactory    $productInterfaceFactory,
+        ProductInterfaceFactory $productInterfaceFactory,
         ProductRepositoryInterface $productRepository,
-        State                      $appState,
-        StoreManagerInterface      $storeManager,
-        EavSetup                   $eavSetup,
+        State $appState,
+        StoreManagerInterface $storeManager,
+        EavSetup $eavSetup,
         SourceItemInterfaceFactory $sourceItemFactory,
-        SourceItemsSaveInterface   $sourceItemsSaveInterface,
+        SourceItemsSaveInterface $sourceItemsSaveInterface,
         CategoryLinkManagementInterface $categoryLink
-    )
-    {
+    ) {
         $this->appState = $appState;
         $this->productInterfaceFactory = $productInterfaceFactory;
         $this->productRepository = $productRepository;
@@ -48,11 +94,32 @@ class CreateProduct implements DataPatchInterface
         $this->categoryLink = $categoryLink;
     }
 
+    /**
+     * @return array|string[]
+     */
+    public static function getDependencies(): array
+    {
+        return [];
+    }
+
+    /**
+     * @return void
+     * @throws \Exception
+     */
     public function apply(): void
     {
         $this->appState->emulateAreaCode('adminhtml', [$this, 'execute']);
     }
 
+    /**
+     * @return void
+     * @throws \Magento\Framework\Exception\CouldNotSaveException
+     * @throws \Magento\Framework\Exception\InputException
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @throws \Magento\Framework\Exception\StateException
+     * @throws \Magento\Framework\Validation\ValidationException
+     */
     public function execute(): void
     {
         $product = $this->productInterfaceFactory->create();
@@ -72,8 +139,8 @@ class CreateProduct implements DataPatchInterface
             ->setPrice(9.99)
             ->setVisibility(Visibility::VISIBILITY_BOTH)
             ->setStatus(Status::STATUS_ENABLED);
-        $product = $this->productRepository->save($product);
 
+        $product = $this->productRepository->save($product);
         $sourceItem = $this->sourceItemFactory->create();
         $sourceItem->setSourceCode('default');
         $sourceItem->setQuantity(10);
@@ -84,11 +151,9 @@ class CreateProduct implements DataPatchInterface
         $this->categoryLink->assignProductToCategories($product->getSku(), [2]);
     }
 
-    public static function getDependencies(): array
-    {
-        return [];
-    }
-
+    /**
+     * @return array|string[]
+     */
     public function getAliases(): array
     {
         return [];
