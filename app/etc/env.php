@@ -1,14 +1,14 @@
 <?php
 return [
     'backend' => [
-        'frontName' => 'admin'
+        'frontName' => 'admin',
     ],
     'remote_storage' => [
-        'driver' => 'file'
+        'driver' => 'file',
     ],
     'cache' => [
         'graphql' => [
-            'id_salt' => 'eGgrxFd1GbMzfpSyz1Sx77QOIvGLhXFy'
+            'id_salt' => 'eGgrxFd1GbMzfpSyz1Sx77QOIvGLhXFy',
         ],
         'frontend' => [
             'default' => [
@@ -22,23 +22,23 @@ return [
                     'compress_data' => '1',
                     'compression_lib' => '',
                     '_useLua' => true,
-                    'use_lua' => false
-                ]
+                    'use_lua' => false,
+                ],
             ],
             'page_cache' => [
-                'id_prefix' => '66c_'
-            ]
+                'id_prefix' => '66c_',
+            ],
         ],
-        'allow_parallel_generation' => false
+        'allow_parallel_generation' => false,
     ],
     'config' => [
-        'async' => 0
+        'async' => 0,
     ],
     'queue' => [
-        'consumers_wait_for_messages' => 1
+        'consumers_wait_for_messages' => 1,
     ],
     'crypt' => [
-        'key' => 'base64Tbe2I6UhWyxpB2pZjNNIvVwMwNNdLd8Eqlge2kO162c='
+        'key' => 'base64Tbe2I6UhWyxpB2pZjNNIvVwMwNNdLd8Eqlge2kO162c=',
     ],
     'db' => [
         'table_prefix' => '',
@@ -53,15 +53,15 @@ return [
                 'initStatements' => 'SET NAMES utf8;',
                 'active' => '1',
                 'driver_options' => [
-                    1014 => false
-                ]
-            ]
-        ]
+                    1014 => false,
+                ],
+            ],
+        ],
     ],
     'resource' => [
         'default_setup' => [
-            'connection' => 'default'
-        ]
+            'connection' => 'default',
+        ],
     ],
     'x-frame-options' => 'SAMEORIGIN',
     'MAGE_MODE' => 'developer',
@@ -89,14 +89,14 @@ return [
             'sentinel_master' => '',
             'sentinel_servers' => '',
             'sentinel_connect_retries' => '5',
-            'sentinel_verify_master' => '0'
-        ]
+            'sentinel_verify_master' => '0',
+        ],
     ],
     'lock' => [
-        'provider' => 'db'
+        'provider' => 'db',
     ],
     'directories' => [
-        'document_root_is_pub' => true
+        'document_root_is_pub' => true,
     ],
     'cache_types' => [
         'config' => 1,
@@ -113,18 +113,18 @@ return [
         'graphql_query_resolver_result' => 1,
         'full_page' => 1,
         'config_webservice' => 1,
-        'translate' => 1
+        'translate' => 1,
     ],
     'downloadable_domains' => [
-        'localhost'
+        0 => 'localhost',
     ],
     'install' => [
-        'date' => 'Wed, 16 Oct 2024 13:01:15 +0000'
+        'date' => 'Wed, 16 Oct 2024 13:01:15 +0000',
     ],
     'http_cache_hosts' => [
-        [
+        0 => [
             'host' => '127.0.0.1',
-            'port' => '8080'
-        ]
-    ]
+            'port' => '8080',
+        ],
+    ],
 ];

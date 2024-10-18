@@ -1,0 +1,1 @@
+/media/mohamedyoussef/data/scandiweb/how_to_work_with_catalogue/vendor/magento/module-inventory-swatches-frontend-ui/view/frontend/web/js/swatch-renderer.js

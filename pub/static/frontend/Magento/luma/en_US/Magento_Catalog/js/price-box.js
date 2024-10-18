@@ -1,0 +1,1 @@
+/media/mohamedyoussef/data/scandiweb/how_to_work_with_catalogue/vendor/magento/module-catalog/view/base/web/js/price-box.js

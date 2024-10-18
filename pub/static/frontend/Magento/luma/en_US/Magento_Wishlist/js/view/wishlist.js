@@ -1,0 +1,1 @@
+/media/mohamedyoussef/data/scandiweb/how_to_work_with_catalogue/vendor/magento/module-wishlist/view/frontend/web/js/view/wishlist.js

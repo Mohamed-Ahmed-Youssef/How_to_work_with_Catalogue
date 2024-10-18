@@ -1,0 +1,1 @@
+/media/mohamedyoussef/data/scandiweb/how_to_work_with_catalogue/lib/web/js-cookie/cookie-wrapper.js
