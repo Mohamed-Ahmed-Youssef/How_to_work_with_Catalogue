@@ -1,6 +1,6 @@
 <?php
 
-namespace Example\Migration\Setup\Patch\Data;
+namespace Scandiweb\Test\Setup\Patch\Data;
 
 use Magento\Catalog\Api\CategoryLinkManagementInterface;
 use Magento\Catalog\Api\Data\ProductInterfaceFactory;
@@ -141,6 +141,7 @@ class CreateProduct implements DataPatchInterface
             ->setStatus(Status::STATUS_ENABLED);
 
         $product = $this->productRepository->save($product);
+
         $sourceItem = $this->sourceItemFactory->create();
         $sourceItem->setSourceCode('default');
         $sourceItem->setQuantity(10);
